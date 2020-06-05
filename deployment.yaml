@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lytx
+  labels:
+    app: lytx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: lytx
+  template:
+    metadata:
+      labels: # labels to select/identify the deployment
+        app: lytx
+    spec:     # pod specגםבל
+      containers:
+        - name: lytx
+          image: lytx:v1 # image we pushed
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 9191
+
