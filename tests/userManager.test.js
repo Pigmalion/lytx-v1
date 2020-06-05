@@ -7,7 +7,7 @@ const expect = chai.expect;
 const assert = require("assert");
 
 
-describe("Add user should be successful", function () {
+describe("User management should be successful", function () {
     it('user should be added to db', function (done) {
         const _validateUserObjStab = sinon.stub(userManager, "_validateUserObj").returns(true);
         const dataAccessStab = sinon.stub(userManager.dataAccess, "addRecord").returns(1);
@@ -79,6 +79,7 @@ describe("Add user should be successful", function () {
         done();
 
     });
+
 
 
 });
