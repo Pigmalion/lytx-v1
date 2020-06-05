@@ -1,4 +1,4 @@
 # Created by .ignore support plugin (hsz.mobi)
-node_modules
-.nyc_output
-.idea
+!/.nyc_output/
+!/node_modules/
+!/.idea/

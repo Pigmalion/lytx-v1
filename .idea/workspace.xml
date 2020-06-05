@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9dba91cd-0cd1-4528-8584-0b92f8aa11ff" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.nyc_output/658d0ba5-c99e-4ed7-8f4e-3a216869d0ae.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.nyc_output/fdc55ea0-adef-464a-a73d-b4cf8ad0c98c.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.nyc_output/processinfo/658d0ba5-c99e-4ed7-8f4e-3a216869d0ae.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.nyc_output/processinfo/fdc55ea0-adef-464a-a73d-b4cf8ad0c98c.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.nyc_output/processinfo/index.json" beforeDir="false" afterPath="$PROJECT_DIR$/.nyc_output/processinfo/index.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/userManager.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/tests/userManager.test.js" afterDir="false" />
-    </list>
+    <list default="true" id="9dba91cd-0cd1-4528-8584-0b92f8aa11ff" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -129,7 +119,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1591122248629</updated>
-      <workItem from="1591122252632" duration="31977000" />
+      <workItem from="1591122252632" duration="32218000" />
     </task>
     <servers />
   </component>
