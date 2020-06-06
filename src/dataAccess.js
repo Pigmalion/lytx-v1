@@ -1,3 +1,4 @@
+const users = require('./../tests/mockData/mock-users')
 class DataAccess {
 
     init() {
@@ -12,9 +13,13 @@ class DataAccess {
         return 1
     }
     removeRecord(recordID){
-
+        if(!recordID)
+            return 0;
+        return 1
     }
-    getAllRecords(){}
+    getAllRecords(){
+        return users;
+    }
 }
 
 module.exports = new DataAccess();

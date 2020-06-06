@@ -1,31 +1,43 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const PORT = process.env.PORT || 9191;
-const userManager = require('./src/userManager');
+const userController = require('./src/userController');
 const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 
-app.post('/addUser', (req, res) => {
+app.post('/addUser', async (req, res) => {
     try {
-        let result = userManager.addUser(req.body.user);
-        res.json({status: 200, effected: result})
+        let result = await userController.addUser(req.body.user);
+        await res.json({status: 200, effected: result})
     } catch (error) {
-        res.json({status: 400, error})
+       await res.json({status: 400, error:error.message})
     }
 
 });
 
-app.post('/getAll', (req, res) => {
-    let result = userManager.getAllUsers();
-    res.json({status: 200,users:result});
+app.post('/getAll',async (req, res) => {
+    try {
+        let result = await userController.getAllUsers();
+        await res.json({status: 200, users: result,});
+    }catch (error) {
+        await res.json({status:400,error:error.message})
+    }
 });
 
-app.post('/deleteUser', (req, res) => {
-    let result = userManager.removeUser(req.body.userId);
-    res.json({status: 200});
+app.post('/deleteUser', async (req, res) => {
+    try {
+        let result = await userController.removeUser(req.body.userId);
+        if(result == 0 ){
+            await res.json({status: 304, result});
+        }else{
+            await res.json({status: 200, result});
+        }
+    }catch (error) {
+        await res.json({status: 400, error:error.message})
+    }
 });
 
 

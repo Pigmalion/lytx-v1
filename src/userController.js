@@ -1,6 +1,6 @@
 const dataAccess = require('./dataAccess');
 
-class UserManager {
+class UserController {
 
     constructor() {
         dataAccess.init();
@@ -8,8 +8,9 @@ class UserManager {
     }
 
     _validateUserObj(user) {
-        if (!user.password || !user.name || !user.email)
+        if (!user || !user.password || !user.name || !user.email){
             throw new Error('Missing parameters');
+        }
 
        return this._validatePasswordComplexity(user.password);
     }
@@ -29,7 +30,7 @@ class UserManager {
     };
 
     removeUser = (userID) => {
-        dataAccess.removeRecord(userID)
+        return dataAccess.removeRecord(userID)
     };
 
     getAllUsers = () => {
@@ -41,4 +42,4 @@ class UserManager {
 
 }
 
-module.exports = new UserManager();
+module.exports = new UserController();

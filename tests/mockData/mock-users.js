@@ -9,6 +9,8 @@ function mockUsers() {
         ],
 
         badUserObj: [
+            null,
+            {},
             {
             name: "",
             email: "nn@nn.com",

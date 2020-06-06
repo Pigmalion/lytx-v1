@@ -1,0 +1,139 @@
+openapi: 3.0.1
+info:
+  title: Lytx - user manager MS
+  description: home assignment for Nathan Borik
+  version: "0.1"
+servers:
+- url: http://localhost:9191
+paths:
+  /getAll:
+    post:
+      description: Retrieve all users
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties: {}
+            examples:
+              "0":
+                value: '{}'
+      responses:
+        "200":
+          description: Retrieve all users - successful
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: string
+              examples: {}
+      servers:
+      - url: http://localhost:9191
+    servers:
+    - url: http://localhost:9191
+  /addUser:
+    post:
+      description: Create new user
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/body'
+            examples:
+              "0":
+                value: |-
+                  {"user":{
+                                  "name": "nathan",
+                                  "email": "nn@nn.com",
+                                  "password": "Assssdd-$er32"
+                              }}
+      responses:
+        "200":
+          description: Successfully add user
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: string
+              examples:
+                "0":
+                  value: |-
+                    {"user":{
+                                    "name": "nathan",
+                                    "email": "nn@nn.com",
+                                    "password": "Assssdd-$er32"
+                                }}
+        "400":
+          description: Failur in case of absence or insufficient parameters
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: string
+              examples:
+                "0":
+                  value: |-
+                    {"user":{
+                                    "name": null,
+                                    "email": "nn@nn.com",
+                                    "password": "Assssdd-$er32"
+                                }}
+                "1":
+                  value: '{}'
+                "2":
+                  value: '{"user":{}}'
+                "3":
+                  value: "{\"user\":{\n              \"name\": null,\n           \
+                    \   \"email\": \"nn@nn.com\",\n              \"password\": \"\
+                    querty\" //insufficient password  \n          }}\n          "
+      servers:
+      - url: http://localhost:9191
+    servers:
+    - url: http://localhost:9191
+  /deleteUser:
+    post:
+      description: Delete user by
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/body_1'
+            examples:
+              "0":
+                value: '{"userId":"ididid"}'
+      responses:
+        "200":
+          description: Succesfully deleted user
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: string
+              examples:
+                "0":
+                  value: '{"userId":"ididid"}'
+        "304":
+          description: No change to DB
+          content:
+            application/json; charset=utf-8:
+              schema: {}
+              examples:
+                "0":
+                  value: '{"userId":null}'
+      servers:
+      - url: http://localhost:9191
+    servers:
+    - url: http://localhost:9191
+components:
+  schemas:
+    addUser_user:
+      type: object
+      properties:
+        name:
+          type: string
+    body:
+      type: object
+      properties:
+        user:
+          $ref: '#/components/schemas/addUser_user'
+    body_1:
+      type: object
+      properties:
+        userId:
+          type: string
