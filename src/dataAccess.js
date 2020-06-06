@@ -5,7 +5,7 @@ class DataAccess {
         this._connectToDB();
     }
 
-    _connectToDB = () => {
+    _connectToDB() {
         console.log(" DB CONNECTED ")
     };
 

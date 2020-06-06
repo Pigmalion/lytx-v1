@@ -20,4 +20,15 @@ spec:
           imagePullPolicy: Always
           ports:
             - containerPort: 9191
-
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: lytx
+spec:
+  selector:
+    app: lytx
+  ports:
+    - protocol: TCP
+      port: 9191
+      targetPort: 9191

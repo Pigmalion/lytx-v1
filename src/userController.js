@@ -24,16 +24,16 @@ class UserController {
         return true
     }
 
-    addUser = (user) => {
+    addUser(user) {
         this._validateUserObj(user);
         return this.dataAccess.addRecord(user)
     };
 
-    removeUser = (userID) => {
+    removeUser (userID) {
         return dataAccess.removeRecord(userID)
     };
 
-    getAllUsers = () => {
+    getAllUsers () {
         return dataAccess.getAllRecords()
 
     };

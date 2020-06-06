@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const PORT = process.env.PORT || 9191;
+const URL = process.env.URL || 'localhost';
 const userController = require('./src/userController');
 const app = express();
 
@@ -42,6 +43,6 @@ app.post('/deleteUser', async (req, res) => {
 
 
 app.listen(PORT, () => {
-    console.log(' Running on http://localhost:9191')
+    console.log(` Running on http://${URL}:9191`)
 
 });
