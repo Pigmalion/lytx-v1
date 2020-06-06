@@ -13,10 +13,10 @@ spec:
     metadata:
       labels: # labels to select/identify the deployment
         app: lytx
-    spec:     # pod specגםבל
+    spec:     # pod spec
       containers:
         - name: lytx
-          image: lytx:v1 # image we pushed
+          image: nathanborik/lytx:v1 # image we pushed
           imagePullPolicy: Always
           ports:
             - containerPort: 9191
