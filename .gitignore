@@ -2,3 +2,10 @@
 !/.nyc_output/
 !/node_modules/
 !/.idea/
+.idea/*
+node_modules
+.nyc_output
+.nyc_output/d1cf6fc7-6903-4a92-845f-f76aa3cc9b6a.json
+.nyc_output/e3dad1e2-69a8-49fa-bec0-9acc53f41c84.json
+.nyc_output/processinfo/d1cf6fc7-6903-4a92-845f-f76aa3cc9b6a.json
+.nyc_output/processinfo/e3dad1e2-69a8-49fa-bec0-9acc53f41c84.json
